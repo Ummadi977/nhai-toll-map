@@ -621,7 +621,7 @@ function renderMap(plazas) {
 
   plazas.forEach(p => {
     const r      = detectedCols.valueCol ? 5 + 13 * ((p._value || 0) / maxVal) : 8;
-    const name   = nameCol ? (p[nameCol] || 'Toll Plaza') : 'Toll Plaza';
+    const name   = nameCol ? (p[nameCol] || 'Data Info') : 'Data Info';
     const marker = L.circleMarker([+p[latCol], +p[lonCol]], {
       radius:      r,
       color:       '#1a6b3c',
