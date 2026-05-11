@@ -664,9 +664,17 @@ function buildPopup(p) {
   });
 
   const title = nameCol ? (p[nameCol] || 'Toll Plaza') : 'Toll Plaza';
+  const lat = +p[latCol], lon = +p[lonCol];
+  const mapsUrl = `https://www.google.com/maps?q=${lat},${lon}`;
   return `<div class="toll-popup">
     <div class="tp-header">${escHtml(String(title))}</div>
     <table class="tp-table">${rows}</table>
+    <a href="${mapsUrl}" target="_blank" rel="noopener" style="
+      display:block; margin-top:10px; padding:7px 0; text-align:center;
+      background:#1a6b3c; color:#fff; border-radius:6px; font-size:12px;
+      font-weight:600; text-decoration:none;">
+      📍 Open in Google Maps
+    </a>
   </div>`;
 }
 
